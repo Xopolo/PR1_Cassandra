@@ -1,3 +1,5 @@
+package es.unex.cum.sinf;
+
 import com.datastax.driver.core.ResultSet;
 import com.datastax.driver.core.Session;
 
@@ -13,6 +15,7 @@ public class Noticia {
     String titulo;
     String cuerpo;
     UUID fecha;
+    LocalDate fechaLocalDate;
     Set<String> etiquetas;
     String nick_autor;
     String desc_autor;
@@ -46,6 +49,14 @@ public class Noticia {
         this.desc_autor = desc_autor;
     }
 
+    public Noticia(String titulo, String cuerpo, LocalDate of, Set<String> tags, String autor) {
+        this.titulo = titulo;
+        this.cuerpo = cuerpo;
+        this.fechaLocalDate = of;
+        this.etiquetas = tags;
+        this.nick_autor = autor;
+    }
+
     public void insertarNoticia() {
         LocalDate ahora = LocalDate.now();
         session.execute("insert into noticias_por_fecha (dia, mes, anio, fecha, autor, cuerpo, tags, titulo)\n" +
@@ -75,7 +86,7 @@ public class Noticia {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("Noticia{");
+        final StringBuilder sb = new StringBuilder("es.unex.cum.sinf.Noticia{");
         sb.append("titulo='").append(titulo).append('\'');
         sb.append(", cuerpo='").append(cuerpo).append('\'');
         sb.append(", fecha=").append(fecha);
@@ -86,7 +97,7 @@ public class Noticia {
     }
 
     public String toStringConDesc() {
-        final StringBuilder sb = new StringBuilder("Noticia{");
+        final StringBuilder sb = new StringBuilder("es.unex.cum.sinf.Noticia{");
         sb.append("titulo='").append(titulo).append('\'');
         sb.append(", cuerpo='").append(cuerpo).append('\'');
         sb.append(", fecha=").append(fecha);
@@ -95,5 +106,33 @@ public class Noticia {
         sb.append(", desc_autor='").append(desc_autor).append('\'');
         sb.append('}');
         return sb.toString();
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public String getCuerpo() {
+        return cuerpo;
+    }
+
+    public UUID getFecha() {
+        return fecha;
+    }
+
+    public Set<String> getEtiquetas() {
+        return etiquetas;
+    }
+
+    public String getNick_autor() {
+        return nick_autor;
+    }
+
+    public String getDesc_autor() {
+        return desc_autor;
+    }
+
+    public LocalDate getFechaLocalDate() {
+        return fechaLocalDate;
     }
 }

@@ -1,3 +1,5 @@
+package es.unex.cum.sinf;
+
 import com.datastax.driver.core.ResultSet;
 import com.datastax.driver.core.Row;
 import com.datastax.driver.core.Session;
@@ -12,6 +14,7 @@ public class Comentario {
     private String titulo_noticia;
     private String cuerpo;
     private String usuario;
+    private String autor_noticia;
 
     public Comentario(Session session, String cuerpo, String usuario, String titulo_noticia) {
         this.session = session;
@@ -26,6 +29,15 @@ public class Comentario {
         this.titulo_noticia = titulo_noticia;
         this.fecha = fecha;
     }
+
+    public Comentario(String cuerpo, String usuario, String titulo_noticia, LocalDate fecha, String autor_noticia) {
+        this.autor_noticia = autor_noticia;
+        this.cuerpo = cuerpo;
+        this.usuario = usuario;
+        this.titulo_noticia = titulo_noticia;
+        this.fecha = fecha;
+    }
+
 
     public Comentario(String titulo_noticia, String cuerpo, String usuario) {
         this.titulo_noticia = titulo_noticia;
@@ -76,12 +88,32 @@ public class Comentario {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("Comentario{");
+        final StringBuilder sb = new StringBuilder("es.unex.cum.sinf.Comentario{");
         sb.append("fecha=").append(fecha);
         sb.append(", titulo_noticia='").append(titulo_noticia).append('\'');
         sb.append(", cuerpo='").append(cuerpo).append('\'');
         sb.append(", usuario='").append(usuario).append('\'');
         sb.append('}');
         return sb.toString();
+    }
+
+    public LocalDate getFecha() {
+        return fecha;
+    }
+
+    public String getTitulo_noticia() {
+        return titulo_noticia;
+    }
+
+    public String getCuerpo() {
+        return cuerpo;
+    }
+
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public String getAutor_noticia() {
+        return autor_noticia;
     }
 }

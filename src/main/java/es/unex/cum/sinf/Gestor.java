@@ -1,3 +1,5 @@
+package es.unex.cum.sinf;
+
 import com.datastax.driver.core.*;
 
 import java.time.LocalDate;

@@ -1,6 +1,6 @@
-import com.datastax.driver.core.Session;
+package es.unex.cum.sinf;
 
-import java.util.UUID;
+import com.datastax.driver.core.Session;
 
 public class Usuario {
 
@@ -51,7 +51,7 @@ public class Usuario {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("Usuario{");
+        final StringBuilder sb = new StringBuilder("es.unex.cum.sinf.Usuario{");
         sb.append("nombre_usuario='").append(nombre_usuario).append('\'');
         sb.append(", nombre='").append(nombre).append('\'');
         sb.append(", cuenta_twitter='").append(cuenta_twitter).append('\'');
@@ -82,5 +82,21 @@ public class Usuario {
         result = 31 * result + (cuenta_twitter != null ? cuenta_twitter.hashCode() : 0);
         result = 31 * result + (descripcion != null ? descripcion.hashCode() : 0);
         return result;
+    }
+
+    public String getNombre_usuario() {
+        return nombre_usuario;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getCuenta_twitter() {
+        return cuenta_twitter;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
     }
 }
