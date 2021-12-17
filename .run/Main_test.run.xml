@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+    <configuration default="false" name="Main_test" type="Application" factoryName="Application" nameIsGenerated="true">
+        <option name="MAIN_CLASS_NAME" value="es.unex.cum.sinf.Main_test"/>
+        <module name="PR1_Cassandra"/>
+        <method v="2">
+            <option name="Make" enabled="true"/>
+            <option name="ToolBeforeRunTask" enabled="true" actionId="Tool_External Tools_ssh cassandra"/>
+        </method>
+    </configuration>
+</component>
