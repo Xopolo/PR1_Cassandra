@@ -65,6 +65,8 @@ Una manera comoda de trabajar con la base de datos, es con un entorno grafico de
   2. Ahora tenemos que elegir la forma de conectarnos a esta BD, en nuestro caso es a traves de ssh, por ello, seleccionamos la pestaña SSH/SSL, marcamos la opcion de túnel y tenemos que configurarla, tal como viene en la imagen. Podemos elegir el metodo de autenticacion,
 de tal manera que podemos usar la clave ssh generada anteriormente o podemos autenticarnos con las credenciales usuario contraseña
 
-  ![Conectar BD](https://i.imgur.com/OVS31uI.png)
-  
+![Conectar BD](https://i.imgur.com/OVS31uI.png)
 
+Para elegir el keyspace, en la pestaña de la base de datos, podemos elegir el que vayamos a usar,
+
+![Keyspace](https://i.imgur.com/4wokoBo.png)
